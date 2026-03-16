@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
@@ -285,6 +285,14 @@ body {
 
 .timeline-item:last-child {
     margin-bottom: 0;
+}
+
+.timeline-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer; /* タップできることを明示 */
 }
 
 /* --- Keyframe Animations --- */

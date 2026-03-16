@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>『猫と雀』思い出の展示室</title>
+    <title>『猫と燕』思い出の展示室</title>
+    <!-- 和風フォント（Google Fonts） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,44 +15,82 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <img src="logo.jpg" alt="猫と雀 ロゴ" class="main-logo">
-            <h1 class="site-title">同盟の思い出展示室</h1>
+            <img src="logo.jpg" alt="猫と燕 ロゴ" class="main-logo">
+            <h1 class="site-title">同盟の思い出アルバム</h1>
             <p class="subtitle">Memory Gallery</p>
         </div>
     </header>
 
     <main>
         <section class="reveal-section">
+            <h2 class="section-title">このサイトについて</h2>
+            <p>皆さんお疲れ様です！副盟主の竜火です！この展示サイトは、同盟「猫と燕」の思い出をいつでも振り返るために同盟ロゴが完成と同時につくりました。<div>メンバーのみんなと一緒に過ごした時間や、大切な瞬間を大切に残していくための場所です！</p>
+            <p>楽しい時間をこのサイトに保存して、同盟の歴史を一緒に育てていきましょう！</p></div>
+        </section>
+
+        <section class="reveal-section">
             <h2 class="section-title">集合写真</h2>
             <div class="grid">
                 <div class="card"><img src="同盟レベル集合写真/Lv6.JPG" alt="同盟レベル6達成!"><p>同盟レベル6達成!</p></div>
-                <div class="card"><img src="同盟レベル集合写真/まだ.JPG" alt="同盟レベル2"><p>祝勝会の夜</p></div>
+                <div class="card"><img src="同盟レベル集合写真/まだ.JPG" alt="同盟レベル7の枠"><p>同盟レベル7の枠</p></div>
             </div>
         </section>
 
         <!-- New History Section -->
         <section class="reveal-section">
+            
             <h2 class="section-title">日記 - History -</h2>
             <div class="history-timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2025.10.26</div>
+                    <div class="timeline-date">2025.12.13</div>
                     <div class="timeline-content">
-                        <h3>同盟「猫と雀」結成</h3>
+                        <h3>同盟「猫と燕」結成</h3>
                         <p>始まりの日。数人の仲間と共に、新たな旅が始まった。</p>
                     </div>
                 </div>
+               
+                <div class="timeline-item">
+                    <div class="timeline-date">2026.01.9</div>
+                    <div class="timeline-content">
+                        <h3>焔彗さんが盟主に就任</h3>
+                        <p>新しい猫と燕がスタート！</p>
+                    </div>
+                </div>        
+             
                 <div class="timeline-item">
                     <div class="timeline-date">2026.02.26</div>
                     <div class="timeline-content">
-                        <h3>りゅうかが副盟主に就任</h3>
+                        <h3>竜火が副盟主に就任</h3>
                         <p>慣れないけど同盟のために精一杯がんばります！</p>
                     </div>
                 </div>
+               
                 <div class="timeline-item">
                     <div class="timeline-date">2026.03.14</div>
                     <div class="timeline-content">
                         <h3>同盟レベルが６に！</h3>
                         <p>メンバーの皆さんのおかげで同盟レベルが６になりました！これからも皆さんと仲良く楽しみたいです！記念撮影もして楽しみました(*^^*)</p>
+                        <img src="同盟レベル集合写真/Lv6.JPG" alt="同盟レベル6記念写真">
+                    </div>
+                </div>
+            
+                <div class="timeline-item">
+                    <div class="timeline-date">2026.03.16</div>
+                    <div class="timeline-content">
+                        <h3>同盟ロゴ完成！</h3>
+                        <p>同盟ロゴが完成しました！これからも同盟の皆さんと楽しく過ごしたいという想いを込めて作りました！</p>   
+                        </p>
+                        <img src="logo.jpg" alt="同盟ロゴ">
+                    </div>
+                </div>
+
+                     <div class="timeline-item">
+                    <div class="timeline-date">2026.03.16</div>
+                    <div class="timeline-content">
+                        <h3>同盟サイト完成！</h3>
+                        <p>同盟サイトが完成しました！楽しい時間をこのサイトに保存して、同盟の歴史を一緒に育てていきましょう！</p>   
+                        </p>
+                    
                     </div>
                 </div>
             </div>
@@ -82,7 +124,8 @@
         // 画像拡大表示（ライトボックス）のスクリプト
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
-        const images = document.querySelectorAll('.card img');
+        // ギャラリーのカード内の画像と、日記（タイムライン）内の画像を対象にする
+        const images = document.querySelectorAll('.card img, .timeline-content img');
 
         images.forEach(img => {
             img.addEventListener('click', () => {
