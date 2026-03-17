@@ -1,3 +1,16 @@
+/* 全要素に box-sizing を適用して、パディングやボーダーを幅に含める */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden; /* 横スクロールを防止 */
+}
+
 :root {
     --primary-color: #9370DB; /* 夕暮れの紫 */
     --accent-color: #FFB6C1;  /* 桜のピンク */
@@ -12,6 +25,13 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
+}
+
+/* 画像のレスポンシブ対応（横幅をはみ出さない） */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Hero Section */
@@ -47,18 +67,24 @@ body {
 .hero-content {
     position: relative;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
+    margin: 0 auto;
     /* アニメーションのパフォーマンスを最適化 */
     will-change: opacity, transform;
 }
 
 .main-logo {
-    max-width: 200px;
-    width: 80%;
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 320px;
+    width: 90%; /* 画面内に収める */
     height: auto;
-    margin-bottom: 20px;
     filter: drop-shadow(0 0 15px rgba(147, 112, 219, 0.6)); /* 紫の光彩 */
 
     /* アニメーション設定 */
@@ -109,7 +135,9 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1.0s ease-out, transform 1.0s ease-out;
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
+    padding: 0 16px;
+    max-width: 980px;
     text-align: center;
 }
 
