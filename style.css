@@ -271,14 +271,16 @@ img {
 }
 
 .timeline-content {
-    flex-basis: 45%;
+    flex: 1 1 45%;
+    width: 100%;
     text-align: left;
-    padding-left: 40px;
+    padding: 20px 20px 20px 40px;
     background: #fff;
     border-radius: 6px;
-    padding: 20px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     border-left: 4px solid var(--primary-color);
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* Alternate sides */
@@ -290,11 +292,15 @@ img {
 }
 .timeline-item:nth-child(odd) .timeline-content {
     order: 1;
-    text-align: right;
-    padding-right: 40px;
-    padding-left: 20px;
+    text-align: left;
+    padding: 20px;
     border-left: none;
     border-right: 4px solid var(--primary-color);
+}
+
+.timeline-content h3,
+.timeline-content p {
+    width: 100%;
 }
 
 .timeline-content h3 {
@@ -309,6 +315,8 @@ img {
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--text-color);
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .timeline-item:last-child {
