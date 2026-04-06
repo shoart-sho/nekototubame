@@ -331,6 +331,66 @@ img {
     cursor: pointer; /* タップできることを明示 */
 }
 
+.like-panel {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.like-button {
+    background-color: #1f1f1f;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.like-button:hover {
+    transform: scale(1.05);
+    background-color: #373737;
+}
+
+.like-button:active,
+.like-button.like-sent {
+    transform: scale(0.98);
+}
+
+.like-button.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.like-count {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #222;
+    min-width: 75px;
+}
+
+@keyframes like-pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.like-button.like-sent {
+    animation: like-pop 0.25s ease;
+}
+
 /* --- Keyframe Animations --- */
 @keyframes logo-animation {
     from {
